@@ -1,0 +1,33 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Edit Comment{% endblock %}
+{% block layout_class %}layout layout--single{% endblock %}
+{% block sidebar %}{% endblock %}
+
+{% block content %}
+
+<div class="form-card">
+
+    <div class="intro">
+        <p class="script">Edit comment</p>
+        <p>On “{{ object.post.title }}”</p>
+    </div>
+
+    <form method="post" class="form form-compact">
+        {% csrf_token %}
+
+        <div>
+            <label for="{{ form.content.id_for_label }}">Your comment</label>
+            {{ form.content }}
+            {{ form.content.errors }}
+        </div>
+
+        <div class="form-actions">
+            <a class="btn btn-outline" href="{{ object.post.get_absolute_url }}">Cancel</a>
+            <button class="btn" type="submit">Update Comment</button>
+        </div>
+    </form>
+
+</div>
+
+{% endblock %}

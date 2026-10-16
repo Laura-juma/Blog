@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+
+{% block title %}#{{ tag.name }}{% endblock %}
+
+{% block content %}
+
+<div class="page-heading">
+    <h1>Tagged <span class="tag-name">#{{ tag.name }}</span></h1>
+    <p>{{ posts|length }} post{{ posts|length|pluralize }} under this tag</p>
+</div>
+
+{% for post in posts|dictsortreversed:"published_date" %}
+    {% include "blog/_post_row.html" %}
+{% empty %}
+    <div class="empty-state">
+        <i class="bi bi-tag"></i>
+        <p>No posts found for this tag.</p>
+        <a class="btn btn-sm btn-outline" href="{% url 'post_list' %}">Browse all posts</a>
+    </div>
+{% endfor %}
+
+{% endblock %}

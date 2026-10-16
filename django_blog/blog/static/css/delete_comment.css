@@ -1,0 +1,109 @@
+/* =========================
+   CONTAINER
+========================= */
+.delete-comment-container {
+    display: flex;
+    justify-content: center;
+
+    padding: 40px 20px;
+}
+
+/* =========================
+   CARD
+========================= */
+.delete-comment-card {
+    width: 100%;
+    max-width: 550px;
+
+    background: rgba(255,255,255,0.85);
+
+    backdrop-filter: blur(10px);
+
+    padding: 35px;
+
+    border-radius: 24px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+    text-align: center;
+}
+
+/* title */
+.delete-comment-card h2 {
+    color: #2f6b38;
+
+    margin-bottom: 15px;
+}
+
+/* warning text */
+.warning-text {
+    color: #555;
+
+    margin-bottom: 20px;
+}
+
+/* comment preview box */
+.comment-preview {
+    background: rgba(255,182,193,0.2);
+
+    border-left: 4px solid #ff5c8a;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    margin-bottom: 25px;
+
+    color: #444;
+
+    text-align: left;
+}
+
+/* form */
+.delete-comment-form {
+    margin-bottom: 15px;
+}
+
+/* delete button */
+.delete-btn {
+    background: #ff5c8a;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    background: #ff2f75;
+
+    transform: translateY(-2px);
+}
+
+/* cancel link */
+.cancel-link {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    text-decoration: none;
+
+    color: #2f6b38;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.cancel-link:hover {
+    color: #ff5c8a;
+}

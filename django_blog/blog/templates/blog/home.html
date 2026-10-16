@@ -1,0 +1,52 @@
+{% extends "blog/base.html" %}
+{% load blog_extras %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% latest_posts 7 as posts %}
+
+{% if posts %}
+
+    {% with featured=posts.0 %}
+    <a class="hero" href="{{ featured.get_absolute_url }}">
+        <img src="{% post_image featured 1000 667 %}" alt="">
+        <div class="hero-caption">
+            <h2>{{ featured.title }}</h2>
+            <span class="btn-ghost-light">Read more</span>
+        </div>
+    </a>
+    {% endwith %}
+
+    <div class="welcome-strip">
+        {% if user.is_authenticated %}
+            Welcome back, {{ user.username }} · <a href="{% url 'post_create' %}">write a new post</a>
+        {% else %}
+            The right place for your stories · <a href="{% url 'register' %}">join the community</a>
+        {% endif %}
+    </div>
+
+    <h3 class="section-title">Recent Posts</h3>
+
+    {% for post in posts|slice:"1:" %}
+        {% include "blog/_post_row.html" %}
+    {% empty %}
+        <p class="excerpt">That's the only post so far. More soon!</p>
+    {% endfor %}
+
+    <div class="form-actions form-actions--center">
+        <a class="btn btn-outline" href="{% url 'post_list' %}">View all posts</a>
+    </div>
+
+{% else %}
+
+    <div class="empty-state">
+        <i class="bi bi-flower1"></i>
+        <p>No posts yet. Be the first to write one.</p>
+        <a class="btn btn-sm" href="{% url 'post_create' %}">Write a post</a>
+    </div>
+
+{% endif %}
+
+{% endblock %}

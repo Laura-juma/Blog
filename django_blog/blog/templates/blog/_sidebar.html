@@ -1,0 +1,68 @@
+{% load blog_extras %}
+<aside class="sidebar">
+
+    <section>
+        <h3 class="section-title">About Me</h3>
+        <div class="about-me">
+            <img src="https://picsum.photos/seed/djblog-about/300/300" alt="Portrait of the author">
+            <p>Hi, welcome to my little corner of the internet. I write about the things I make, read and learn, one post at a time.</p>
+        </div>
+    </section>
+
+    <section>
+        <h3 class="section-title">Follow Us</h3>
+        <div class="follow-list">
+            <a href="#"><i class="bi bi-facebook"></i><span>Facebook</span><span>Like</span></a>
+            <a href="#"><i class="bi bi-twitter-x"></i><span>Twitter</span><span>Follow</span></a>
+            <a href="#"><i class="bi bi-instagram"></i><span>Instagram</span><span>Follow</span></a>
+            <a href="#"><i class="bi bi-pinterest"></i><span>Pinterest</span><span>Follow</span></a>
+        </div>
+    </section>
+
+    {% if recent_posts %}
+    <section>
+        <h3 class="section-title">Recent Posts</h3>
+        <div class="side-posts">
+            {% for post in recent_posts %}
+                {% if forloop.first %}
+                    <a class="side-feature" href="{{ post.get_absolute_url }}">
+                        <img src="{% post_image post 520 347 %}" alt="" loading="lazy">
+                        <div class="caption">
+                            <h4>{{ post.title }}</h4>
+                            <span class="date">{{ post.published_date|date:"M d, Y" }}</span>
+                        </div>
+                    </a>
+                {% else %}
+                    <a class="side-post" href="{{ post.get_absolute_url }}">
+                        <h4>{{ post.title }}</h4>
+                        <span class="date">{{ post.published_date|date:"M d, Y" }}</span>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {% if tags %}
+    <section>
+        <h3 class="section-title">Tags</h3>
+        <div class="tag-pills">
+            {% for tag in tags %}
+                <a class="tag-pill" href="{% url 'posts_under_tag' tag.name %}">{{ tag.name }}<span class="count">{{ tag.post_count }}</span></a>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    <section class="side-write">
+        <span class="script">Write with us</span>
+        {% if user.is_authenticated %}
+            <p>Got something on your mind? Share it.</p>
+            <a class="btn btn-sm" href="{% url 'post_create' %}">New Post</a>
+        {% else %}
+            <p>Join the community and start sharing your ideas.</p>
+            <a class="btn btn-sm" href="{% url 'register' %}">Join Now</a>
+        {% endif %}
+    </section>
+
+</aside>

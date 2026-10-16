@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+
+{% block title %}New Post{% endblock %}
+{% block layout_class %}layout layout--single{% endblock %}
+{% block sidebar %}{% endblock %}
+
+{% block content %}
+
+<div class="form-card">
+
+    <div class="intro">
+        <p class="script">New story</p>
+        <p>Write something worth reading</p>
+    </div>
+
+    {% url 'post_list' as cancel_url %}
+    {% include "blog/_post_fields.html" with cancel_url=cancel_url submit_label="Publish" %}
+
+</div>
+
+{% endblock %}

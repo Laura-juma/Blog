@@ -1,0 +1,32 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+
+<div class="page-heading">
+    {% if request.GET.q %}
+        <h1>Search results</h1>
+        <p>{{ posts|length }} post{{ posts|length|pluralize }} matching “{{ request.GET.q }}”</p>
+    {% else %}
+        <h1>All Posts</h1>
+        <p>Everything published on the blog, newest first.</p>
+    {% endif %}
+</div>
+
+<form class="form search-inline" method="get">
+    <input type="text" name="q" placeholder="Search by title, content or tag..." value="{{ request.GET.q|default:'' }}" aria-label="Search posts">
+    <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+</form>
+
+{% for post in posts|dictsortreversed:"published_date" %}
+    {% include "blog/_post_row.html" %}
+{% empty %}
+    <div class="empty-state">
+        <i class="bi bi-search-heart"></i>
+        <p>No posts found.</p>
+        {% if request.GET.q %}<a class="btn btn-sm btn-outline" href="{% url 'post_list' %}">Clear search</a>{% endif %}
+    </div>
+{% endfor %}
+
+{% endblock %}

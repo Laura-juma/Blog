@@ -1,0 +1,99 @@
+/* =========================
+   CONTAINER
+========================= */
+.tag-container {
+    max-width: 900px;
+    margin: auto;
+
+    padding: 40px 20px;
+}
+
+/* =========================
+   TITLE (PINK POP)
+========================= */
+.tag-title {
+    text-align: center;
+
+    color: #ff5c8a;
+
+    font-size: 28px;
+
+    margin-bottom: 30px;
+
+    background: rgba(255, 182, 193, 0.25);
+
+    padding: 15px;
+
+    border-radius: 16px;
+}
+
+/* =========================
+   POST CARD
+========================= */
+.tag-card {
+    background: rgba(255,255,255,0.85);
+
+    backdrop-filter: blur(10px);
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    margin-bottom: 18px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.tag-card:hover {
+    transform: translateY(-5px);
+}
+
+/* title */
+.tag-card h3 {
+    color: #2f6b38;
+
+    margin-bottom: 10px;
+}
+
+/* text */
+.tag-card p {
+    color: #555;
+
+    line-height: 1.6;
+}
+
+/* link (PINK ACCENT) */
+.tag-card a {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    text-decoration: none;
+
+    color: #ff5c8a;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.tag-card a:hover {
+    color: #ff2f75;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+.empty-tag {
+    text-align: center;
+
+    padding: 30px;
+
+    background: rgba(255,182,193,0.2);
+
+    border-radius: 16px;
+
+    color: #666;
+}

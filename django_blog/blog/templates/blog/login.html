@@ -1,0 +1,41 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Log In{% endblock %}
+{% block layout_class %}layout layout--single{% endblock %}
+{% block sidebar %}{% endblock %}
+
+{% block content %}
+
+<div class="form-card">
+
+    <div class="intro">
+        <p class="script">Welcome back</p>
+        <p>Sign in to continue to your account</p>
+    </div>
+
+    {% if form.errors %}
+        <ul class="messages"><li class="message error"><span>Invalid username or password.</span></li></ul>
+    {% endif %}
+
+    <form method="post" class="form">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}">
+
+        <div>
+            <label for="{{ form.username.id_for_label }}">Username</label>
+            {{ form.username }}
+        </div>
+
+        <div>
+            <label for="{{ form.password.id_for_label }}">Password</label>
+            {{ form.password }}
+        </div>
+
+        <button class="btn btn-block" type="submit">Log In</button>
+    </form>
+
+    <p class="form-footnote">Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+
+</div>
+
+{% endblock %}

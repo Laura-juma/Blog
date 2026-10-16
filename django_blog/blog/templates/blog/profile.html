@@ -1,0 +1,42 @@
+{% extends "blog/base.html" %}
+
+{% block title %}My Profile{% endblock %}
+{% block layout_class %}layout layout--single{% endblock %}
+{% block sidebar %}{% endblock %}
+
+{% block content %}
+
+<div class="form-card">
+
+    <div class="profile-head">
+        <div class="avatar">{{ user.username|first|upper }}</div>
+        <h1>{{ user.username }}</h1>
+        <p>{{ user.email|default:"No email set" }}</p>
+    </div>
+
+    <div class="profile-stats">
+        <div><strong>{{ user.posts.count }}</strong><span>Posts</span></div>
+        <div><strong>{{ user.comments.count }}</strong><span>Comments</span></div>
+    </div>
+
+    <h3 class="section-title">Account Settings</h3>
+
+    <form method="post" class="form">
+        {% csrf_token %}
+
+        <div>
+            <label for="id_username">Username</label>
+            <input type="text" id="id_username" name="username" value="{{ user.username }}" required>
+        </div>
+
+        <div>
+            <label for="id_email">Email</label>
+            <input type="email" id="id_email" name="email" value="{{ user.email }}">
+        </div>
+
+        <button class="btn btn-block" type="submit">Update Profile</button>
+    </form>
+
+</div>
+
+{% endblock %}

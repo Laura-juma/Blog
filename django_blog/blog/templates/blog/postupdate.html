@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Edit Post{% endblock %}
+{% block layout_class %}layout layout--single{% endblock %}
+{% block sidebar %}{% endblock %}
+
+{% block content %}
+
+<div class="form-card">
+
+    <div class="intro">
+        <p class="script">Edit story</p>
+        <p>Make your changes to “{{ object.title }}”</p>
+    </div>
+
+    {% include "blog/_post_fields.html" with cancel_url=object.get_absolute_url submit_label="Save Changes" %}
+
+</div>
+
+{% endblock %}

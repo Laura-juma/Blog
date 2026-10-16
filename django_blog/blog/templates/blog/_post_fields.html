@@ -1,0 +1,28 @@
+<form method="post" class="form">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+
+    <div>
+        <label for="{{ form.title.id_for_label }}">Title</label>
+        {{ form.title }}
+        {{ form.title.errors }}
+    </div>
+
+    <div>
+        <label for="{{ form.content.id_for_label }}">Content</label>
+        {{ form.content }}
+        {{ form.content.errors }}
+    </div>
+
+    <div>
+        <label for="{{ form.tags.id_for_label }}">Tags</label>
+        {{ form.tags }}
+        <span class="help-text">Separate tags with commas, e.g. travel, food, diy</span>
+        {{ form.tags.errors }}
+    </div>
+
+    <div class="form-actions">
+        <a class="btn btn-outline" href="{{ cancel_url }}">Cancel</a>
+        <button class="btn" type="submit">{{ submit_label }}</button>
+    </div>
+</form>

@@ -1,0 +1,102 @@
+/* =========================
+   AUTH PAGE WRAPPER
+========================= */
+.auth-container {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* =========================
+   AUTH CARD
+========================= */
+.auth-card {
+    width: 360px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+/* title */
+.auth-card h2 {
+    color: #2f6b38;
+    margin-bottom: 8px;
+}
+
+/* subtitle */
+.subtext {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* error */
+.error {
+    color: #e63946;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   FORM
+========================= */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* labels */
+.auth-form label {
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #444;
+}
+
+/* django inputs */
+.auth-form input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* focus effect */
+.auth-form input:focus {
+    border-color: #2f6b38;
+    box-shadow: 0 0 6px rgba(47, 107, 56, 0.25);
+}
+
+/* submit button */
+.auth-form button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+
+    background-color: #2f6b38 !important;
+    color: white !important;
+
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.auth-form button:hover {
+    background-color: #24552c !important;
+    transform: translateY(-2px);
+}
+
+.success-message {
+    color: #2f6b38;
+    font-size: 14px;
+    margin-bottom: 10px;
+}

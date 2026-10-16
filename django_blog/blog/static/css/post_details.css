@@ -1,0 +1,267 @@
+/* =========================
+   PAGE CONTAINER
+========================= */
+.post-detail-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+/* =========================
+   MAIN POST CARD
+========================= */
+.post-detail-card {
+    background: rgba(255,255,255,0.85);
+
+    backdrop-filter: blur(10px);
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+    margin-bottom: 35px;
+}
+
+/* =========================
+   POST ACTIONS
+========================= */
+.post-actions {
+    display: flex;
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+/* edit button */
+.edit-btn {
+    background: #2f6b38;
+    color: white;
+
+    padding: 10px 16px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.edit-btn:hover {
+    background: #24552c;
+}
+
+/* delete button */
+.delete-btn {
+    background: #ffb6c1;
+    color: #333;
+
+    padding: 10px 16px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    background: #ff9fb0;
+}
+
+/* =========================
+   TITLE
+========================= */
+.post-detail-card h1 {
+    font-size: 42px;
+
+    color: #2f6b38;
+
+    margin-bottom: 15px;
+}
+
+/* author */
+.author {
+    color: #666;
+
+    margin-bottom: 20px;
+}
+
+.author span {
+    color: #2f6b38;
+    font-weight: 600;
+}
+
+/* =========================
+   TAGS
+========================= */
+.tags {
+    margin-bottom: 25px;
+}
+
+.tags a {
+    display: inline-block;
+
+    background: #ffe6f0;
+
+    color: #ff5c8a;
+
+    padding: 8px 12px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    margin-right: 8px;
+    margin-bottom: 8px;
+
+    transition: 0.3s;
+}
+
+.tags a:hover {
+    background: #ffd4e5;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.post-content p {
+    line-height: 1.9;
+
+    color: #444;
+
+    font-size: 17px;
+}
+
+/* =========================
+   COMMENTS SECTION
+========================= */
+.comments-section {
+    margin-bottom: 35px;
+}
+
+.comments-section h2 {
+    color: #2f6b38;
+
+    margin-bottom: 20px;
+}
+
+/* comment card */
+.comment-card {
+    background: rgba(255,255,255,0.8);
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    margin-bottom: 18px;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* comment text */
+.comment-text {
+    margin-top: 8px;
+
+    color: #555;
+
+    line-height: 1.6;
+}
+
+/* comment actions */
+.comment-actions {
+    margin-top: 12px;
+}
+
+.comment-actions a {
+    text-decoration: none;
+
+    margin-right: 14px;
+
+    color: #ff5c8a;
+
+    font-weight: 500;
+}
+
+/* =========================
+   COMMENT FORM
+========================= */
+.comment-form-card {
+    background: rgba(255,255,255,0.85);
+
+    padding: 30px;
+
+    border-radius: 22px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.comment-form-card h3 {
+    color: #2f6b38;
+
+    margin-bottom: 18px;
+}
+
+/* form */
+.comment-form p {
+    margin-bottom: 18px;
+}
+
+/* inputs + textarea */
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    border: 1px solid #ddd;
+
+    outline: none;
+
+    margin-top: 8px;
+
+    transition: 0.3s;
+}
+
+/* focus */
+.comment-form input:focus,
+.comment-form textarea:focus {
+    border-color: #2f6b38;
+
+    box-shadow: 0 0 6px rgba(47,107,56,0.2);
+}
+
+/* textarea */
+.comment-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* =========================
+   LOGIN MESSAGE
+========================= */
+.login-message {
+    text-align: center;
+
+    background: rgba(255,255,255,0.7);
+
+    padding: 20px;
+
+    border-radius: 18px;
+}
+
+/* =========================
+   EMPTY COMMENTS
+========================= */
+.empty-comments {
+    background: rgba(255,255,255,0.7);
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    text-align: center;
+}

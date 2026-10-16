@@ -1,0 +1,153 @@
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+    background: linear-gradient(135deg, #eaffea, #ffe6f0);
+    color: #333;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    background: rgba(255, 255, 255, 0.7);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+
+    padding: 18px 40px;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+/* nav list */
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+}
+
+/* push logo left */
+.logo {
+    margin-right: auto;
+}
+
+/* logo */
+.logo a {
+    text-decoration: none;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    color: #2f6b38;
+}
+
+/* nav links */
+.nav-links a {
+    text-decoration: none;
+
+    color: #444;
+
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #2f6b38;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+main {
+    flex: 1;
+    padding: 2rem;
+}
+
+.content {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button,
+.btn {
+    display: inline-block;
+
+    padding: 12px 18px;
+
+    border-radius: 12px;
+
+    border: none;
+
+    background: #2f6b38;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover,
+.btn:hover {
+    background: #24552c;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    text-align: center;
+
+    padding: 25px;
+
+    color: #666;
+}

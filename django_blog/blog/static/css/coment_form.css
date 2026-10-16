@@ -1,0 +1,119 @@
+/* =========================
+   CONTAINER
+========================= */
+.comment-container {
+    display: flex;
+    justify-content: center;
+
+    padding: 40px 20px;
+}
+
+/* =========================
+   CARD
+========================= */
+.comment-card {
+    width: 100%;
+    max-width: 600px;
+
+    background: rgba(255,255,255,0.85);
+
+    backdrop-filter: blur(10px);
+
+    padding: 35px;
+
+    border-radius: 24px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* title */
+.comment-card h2 {
+    text-align: center;
+
+    color: #2f6b38;
+
+    margin-bottom: 20px;
+}
+
+/* =========================
+   FORM
+========================= */
+.comment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* spacing for Django as_p */
+.comment-form p {
+    margin-bottom: 18px;
+}
+
+/* labels */
+.comment-form label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #444;
+
+    font-weight: 500;
+}
+
+/* inputs + textarea */
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    border: 1px solid #ddd;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+/* focus */
+.comment-form input:focus,
+.comment-form textarea:focus {
+    border-color: #2f6b38;
+
+    box-shadow: 0 0 6px rgba(47,107,56,0.2);
+}
+
+/* textarea */
+.comment-form textarea {
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+/* button */
+.comment-form button {
+    margin-top: 10px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #2f6b38;
+
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+/* hover */
+.comment-form button:hover {
+    background: #24552c;
+
+    transform: translateY(-2px);
+}
